@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+} 
+li, a, button{
+   font-family: 'Montserrat', sans-serif;
+   font-size: 16px;
+   font-weight: 500;
+   color: white;
+   text-decoration: none;
+}
+.topbar{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 30px 10%;
+   background-color: transparent;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   z-index: 1;
+   transition: all 0.3s ease;
+   border-bottom-right-radius: 25px;
+   border-bottom-left-radius: 25px;
+}
+.topbar.scrolled {
+   background-color: rgba(40, 41, 41, 0.884);
+   backdrop-filter: blur(10px);
+   padding: 20px 10%;
+}
+.logo{
+   cursor: pointer;
+   font-family: 'Russo One', sans-serif;
+   font-size: 40px;
+}
+.nav__link{
+   list-style: none;
+}
+.nav__link li{
+   display: inline-block;
+   padding: 0px 20px;
+}
+.nav__link li a{
+   transition: all 0.5s ease 0s;
+}
+
+.nav__link li a:hover{
+   color: rgb(9, 246, 246);
+}
+
+.CV{
+   padding: 9px 25px;
+   background-color: rgb(21, 217, 217);
+   border: none;
+   border-radius: 50px;
+   cursor: pointer;
+   transition: all 0.5s ease 0s;
+}
+
+.CV:hover{
+   background-color: rgba(8, 149, 149,0.8);
+}
+.toggle{
+   color: white;
+   size: 1.5rem;
+   cursor: pointer;
+   display: none;
+}
+/* dropdown menu */
+.dropdown-menu{
+   /* display: none; */
+   position:absolute;
+   right: 2rem;
+   top: 60px;
+   width: 300px;
+   height: 0;
+   background-color: rgba(39, 39, 39, 0.74);
+   backdrop-filter: blur(15px);
+   border-radius: 10px;
+   overflow: hidden;
+   transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+}
+.dropdown-menu.open{
+   height:170px;
+}
+.dropdown-menu li{
+   padding: 0.7rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: all 0.5s ease 0s;
+}
+.dropdown-menu li:hover{
+   color: rgb(9, 246, 246);
+}
+/* Responsive design */
+.close-icon{
+   display: none;
+}
+@media (max-width: 992px){
+   .topbar .nav__link,
+   .topbar .CV{
+      display: none;
+   }
+   .topbar .toggle{
+      display: block;
+   }
+   .dropdown-menu{
+      display: block;
+   }
+}
+@media (max-width: 576px){
+   .dropdown-menu{
+      left: 2rem;
+      width: unset;
+   }
+}
